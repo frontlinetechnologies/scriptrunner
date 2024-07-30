@@ -1,0 +1,21 @@
+{
+  "name": "example",
+  "language": "typescript",
+  "entryfile": "index.ts",
+  "parameters": {
+    "input": [
+      {
+        "name": "name",
+        "type": "string",
+        "required": true
+      }
+    ],
+    "output": [
+      {
+        "name": "greeting",
+        "type": "string",
+        "required": true
+      }
+    ]
+  }
+}
