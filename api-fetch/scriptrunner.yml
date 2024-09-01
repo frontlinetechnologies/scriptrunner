@@ -1,0 +1,24 @@
+version: 1
+name: api-fetch
+language: typescript
+entryfile: index.ts
+type: action
+parameters:
+  input:
+    - name: url
+      type: string
+      required: true
+    - name: method
+      type: string
+      required: false
+      default: GET
+      options:
+        - GET
+        - POST
+        - PUT
+        - DELETE
+  output:
+    - name: response
+      type: string
+    - name: errors
+      type: string
