@@ -4,3 +4,10 @@ node_modules/
 
 # Lock files
 bun.lockb
+package-lock.json
+
+# Environment files
+.env*
+
+# Internal
+internal/
