@@ -1,13 +1,25 @@
-async function run() {
-  console.log("Hello, World!");
+import Scriptrunner, { type InputParams as BaseInputParams } from "..";
+
+interface ExampleInputParams extends BaseInputParams {
+  message: string;
 }
 
-run()
-  .then(() => {
+type OutputParams = {
+  result: string;
+};
+
+/**
+ * Example script to demonstrate Scriptrunner functionality
+ */
+async function run(params: ExampleInputParams): Promise<OutputParams> {
+  try {
+    return { result: `Hello, ${params.message}!` };
+  } catch (err) {
+    throw new Error(`Failed to process: ${err}`);
+  } finally {
     console.log("Done");
-    process.exit(0);
-  })
-  .catch((err) => {
-    console.error(err);
-    process.exit(1);
-  });
+  }
+}
+
+// Run the script
+new Scriptrunner<ExampleInputParams, OutputParams>().run(run);
